@@ -6,18 +6,7 @@ const withAuth = require("../../utils/auth");
 // get all users
 router.get("/", (req, res) => {
 	Post.findAll({
-		attributes: [
-			"id",
-			"post_url",
-			"title",
-			"created_at",
-			[
-				sequelize.literal(
-					"(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-				),
-				"vote_count",
-			],
-		],
+		attributes: ["id", "title", "post_text", "created_at"],
 		include: [
 			{
 				model: Comment,
@@ -45,18 +34,7 @@ router.get("/:id", (req, res) => {
 		where: {
 			id: req.params.id,
 		},
-		attributes: [
-			"id",
-			"post_url",
-			"title",
-			"created_at",
-			[
-				sequelize.literal(
-					"(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-				),
-				"vote_count",
-			],
-		],
+		attributes: ["id", "post_text", "title", "created_at"],
 		include: [
 			{
 				model: Comment,
@@ -86,26 +64,13 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-	// expects {title: 'Title text', post_url: 'https://website.com/updates', user_id: 1}
+	// expects {title: 'Title text', post_text: 'This is a post', user_id: 1}
 	Post.create({
 		title: req.body.title,
-		post_url: req.body.post_url,
+		post_text: req.body.post_text,
 		user_id: req.session.user_id,
 	})
 		.then((dbPostData) => res.json(dbPostData))
-		.catch((err) => {
-			console.log(err);
-			res.status(500).json(err);
-		});
-});
-
-// DONT NEED THIS
-router.put("/upvote", withAuth, (req, res) => {
-	Post.upvote(
-		{ ...req.body, user_id: req.session.user_id },
-		{ Vote, Comment, User }
-	)
-		.then((updatedVoteData) => res.json(updatedVoteData))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
