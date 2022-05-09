@@ -10,19 +10,20 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				<h1>
-					<a href="/">My Tech Blog</a>
-				</h1>
+				<h1><a href="/">My Tech Blog</a><span>
+						<h2 class="subtitle">A community resource for sharing and support</h2></span></h1>
 				<nav>
 					{{#if loggedIn}}
-						<a href="/dashboard">Dashboard</a>
-						<button id="logout" class="btn-no-style">logout</button>
+						<a href="/dashboard">Create/Edit Posts</a>
+						<button id="logout" class="btn-no-style">Logout</button>
 					{{else}}
-						<a href="/login">login</a>
+						<a href="/login" id="login">Login/Sign Up</a>
 					{{/if}}
 				</nav>
+
 			</header>
 			<main>
+
 				{{{body}}}
 			</main>
 			<footer>

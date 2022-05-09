@@ -1,5 +1,5 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2>Create New Post:</h2>
 
   <form class="new-post-form">
     <div>
@@ -8,20 +8,20 @@
     </div>
     <div>
       <label for="post-text">Your Post</label>
-      <input id="post-text" name="post-text" />
+      <textarea id="post-text" name="post-text"></textarea>
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn">Add Post</button>
   </form>
 </section>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Posts:</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit This Post</a>
     </li>
     {{/each}}
   </ol>

@@ -1,7 +1,11 @@
+{{! shows up on homepage and  }}
 <article class="post">
 	<div class="title">
-		<a href="{{post_text}}" target="_blank">{{title}}</a>
-		<span>({{post_text}})</span>
+		<a href="/post/{{id}}" target="_blank">{{title}}</a>
+		{{!-- <p>({{post_text}})</p> --}}
+
+		<p>{{post_text}}</p>
+
 	</div>
 	<div class="meta">
 		by
