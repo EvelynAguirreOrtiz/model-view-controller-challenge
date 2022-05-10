@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER, STRING } = require("sequelize");
+const { Model, DataTypes, INTEGER, STRING, TEXT } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Post extends Model {}
@@ -16,7 +16,7 @@ Post.init(
 			allowNull: false,
 		},
 		post_text: {
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
 			allowNull: false,
 			validate: {
 				len: [1],

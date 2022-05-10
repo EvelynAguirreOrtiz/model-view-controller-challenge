@@ -56,6 +56,10 @@ button:hover {
 	background-color: #3486eb;
 }
 
+h6 {
+	margin: 10px 0;
+}
+
 .subtitle {
 	font-size: 20px;
 	text-align: left;
@@ -64,7 +68,7 @@ button:hover {
 
 #login {
 	font-size: 20px;
-	color: #36486b;
+	color: #4040a1;
 }
 
 .post {
