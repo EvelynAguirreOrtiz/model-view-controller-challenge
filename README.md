@@ -24,7 +24,7 @@ No installation is necessary to use this blog.
 
 ## Usage
 
-The application will be accessed on [Heroku](./assets/images/e-commerce-back-end-demo.mp4).
+The application will be accessed on [Heroku](https://vast-retreat-56834.herokuapp.com/).
 
 ![](./assets/images/e-commerce-back-end-demo.gif)
 
