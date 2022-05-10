@@ -26,7 +26,7 @@ No installation is necessary to use this blog.
 
 The application will be accessed on [Heroku](https://vast-retreat-56834.herokuapp.com/).
 
-![](./assets/images/e-commerce-back-end-demo.gif)
+![](./assets/images/MVC-screenshot.jpg)
 
 ## License
 
@@ -44,7 +44,7 @@ GitHub:
 <https://github.com/EvelynAguirreOrtiz>
 
 Project URL:
-https://github.com/EvelynAguirreOrtiz/e-commerce-back-end-challenge-utsa-bc-05-2022.git
+https://github.com/EvelynAguirreOrtiz/model-view-controller-challenge-utsa-bc-05-2022.git
 
 Please send requests for additional information to:
 <evelyn.aguirre.9895@gmail.com>
